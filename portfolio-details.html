@@ -33,11 +33,15 @@
 
 		<!-- Template Main CSS File -->
 		<link href="assets/css/style.css" rel="stylesheet" />
+		<script>
+			var details = JSON.parse(localStorage.getItem("details"));
+
+			console.log(details.category);
+		</script>
 	</head>
 
 	<body>
-
-		<main >
+		<main>
 			<!-- ======= Breadcrumbs ======= -->
 			<section id="breadcrumbs" class="breadcrumbs">
 				<div class="container">
@@ -59,23 +63,11 @@
 						<div class="col-lg-8">
 							<div class="portfolio-details-slider swiper">
 								<div class="swiper-wrapper align-items-center">
-									<div class="swiper-slide">
-										<img
-											src="assets/img/portfolio/portfolio-details-1.jpg"
-											alt="" />
-									</div>
+									<div class="swiper-slide" id="swiper1"></div>
 
-									<div class="swiper-slide">
-										<img
-											src="assets/img/portfolio/portfolio-details-2.jpg"
-											alt="" />
-									</div>
+									<div class="swiper-slide" id="swiper2"></div>
 
-									<div class="swiper-slide">
-										<img
-											src="assets/img/portfolio/portfolio-details-3.jpg"
-											alt="" />
-									</div>
+									<div class="swiper-slide" id="swiper3"></div>
 								</div>
 								<div class="swiper-pagination"></div>
 							</div>
@@ -85,26 +77,13 @@
 							<div class="portfolio-info">
 								<h3>Project information</h3>
 								<ul>
-									<li><strong>Category</strong>: Web design</li>
-									<li><strong>Client</strong>: ASU Company</li>
-									<li><strong>Project date</strong>: 01 March, 2020</li>
-									<li>
-										<strong>Project URL</strong>:
-										<a href="#">www.example.com</a>
-									</li>
+									<li id="category"></li>
+									<li id="client"></li>
+									<li id="project_data"></li>
+									<li id="project_url"></li>
 								</ul>
 							</div>
-							<div class="portfolio-description">
-								<h2>This is an example of portfolio detail</h2>
-								<p>
-									Autem ipsum nam porro corporis rerum. Quis eos dolorem eos
-									itaque inventore commodi labore quia quia. Exercitationem
-									repudiandae officiis neque suscipit non officia eaque itaque
-									enim. Voluptatem officia accusantium nesciunt est omnis
-									tempora consectetur dignissimos. Sequi nulla at esse enim cum
-									deserunt eius.
-								</p>
-							</div>
+							<div class="portfolio-description" id="description"></div>
 						</div>
 					</div>
 				</div>
@@ -127,6 +106,39 @@
 			class="back-to-top d-flex align-items-center justify-content-center"
 			><i class="bi bi-arrow-up-short"></i
 		></a>
+
+		<script>
+			document.getElementById(
+				"category",
+			).innerHTML = `<strong>Category</strong>: ${details.category}`;
+
+			document.getElementById(
+				"client",
+			).innerHTML = `<strong>Client</strong>:  ${details.client}`;
+
+			document.getElementById(
+				"project_data",
+			).innerHTML = `<strong>Project date</strong>: ${details.project_date}`;
+
+			document.getElementById(
+				"description",
+			).innerHTML = `<h2>Description</h2> <p>${details.desc}</p>`;
+
+			document.getElementById(
+				"project_url",
+			).innerHTML = `<strong>Project URL</strong>:
+										<a href="#">${details.project_URL}</a> `;
+
+			document.getElementById("swiper1").innerHTML = `<img
+											src="${details.images.image1}"
+											alt="" />`;
+			document.getElementById("swiper2").innerHTML = `<img
+											src="${details.images.image2}"
+											alt="" />`;
+			document.getElementById("swiper3").innerHTML = `<img
+											src="${details.images.image3}"
+											alt="" />`;
+		</script>
 
 		<!-- Vendor JS Files -->
 		<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>

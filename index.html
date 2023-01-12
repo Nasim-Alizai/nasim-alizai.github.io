@@ -592,9 +592,9 @@
 										data-gallery="portfolioGallery"
 										class="portfolio-lightbox"
 										title="App 1"
-										><i class="bx bx-plus"></i
+										><i class="bx bx-camera"></i
 									></a>
-									<a href="portfolio-details.html" title="More Details"
+									<a onclick="callPage('app1')" title="More Details"
 										><i class="bx bx-link"></i
 									></a>
 								</div>
@@ -613,9 +613,9 @@
 										data-gallery="portfolioGallery"
 										class="portfolio-lightbox"
 										title="Web 3"
-										><i class="bx bx-plus"></i
+										><i class="bx bx-camera"></i
 									></a>
-									<a href="portfolio-details.html" title="More Details"
+									<a onclick="callPage('web1')" title="More Details"
 										><i class="bx bx-link"></i
 									></a>
 								</div>
@@ -634,9 +634,9 @@
 										data-gallery="portfolioGallery"
 										class="portfolio-lightbox"
 										title="App 2"
-										><i class="bx bx-plus"></i
+										><i class="bx bx-camera"></i
 									></a>
-									<a href="portfolio-details.html" title="More Details"
+									<a onclick="callPage('app2')" title="More Details"
 										><i class="bx bx-link"></i
 									></a>
 								</div>
@@ -655,9 +655,9 @@
 										data-gallery="portfolioGallery"
 										class="portfolio-lightbox"
 										title="Web 2"
-										><i class="bx bx-plus"></i
+										><i class="bx bx-camera"></i
 									></a>
-									<a href="portfolio-details.html" title="More Details"
+									<a onclick="callPage('web2')" title="More Details"
 										><i class="bx bx-link"></i
 									></a>
 								</div>
@@ -676,9 +676,9 @@
 										data-gallery="portfolioGallery"
 										class="portfolio-lightbox"
 										title="App 3"
-										><i class="bx bx-plus"></i
+										><i class="bx bx-camera"></i
 									></a>
-									<a href="portfolio-details.html" title="More Details"
+									<a onclick="callPage('app3')" title="More Details"
 										><i class="bx bx-link"></i
 									></a>
 								</div>
@@ -697,9 +697,9 @@
 										data-gallery="portfolioGallery"
 										class="portfolio-lightbox"
 										title="Web 3"
-										><i class="bx bx-plus"></i
+										><i class="bx bx-camera"></i
 									></a>
-									<a href="portfolio-details.html" title="More Details"
+									<a onclick="callPage('web3')" title="More Details"
 										><i class="bx bx-link"></i
 									></a>
 								</div>
@@ -820,6 +820,91 @@
 			class="back-to-top d-flex align-items-center justify-content-center"
 			><i class="bi bi-arrow-up-short"></i
 		></a>
+
+		<script>
+			function callPage(params) {
+				var data = {
+					web1: {
+						images: {
+							image1: "assets/img/portfolio/portfolio-details-3.jpg",
+							image2: "assets/img/portfolio/portfolio-details-3.jpg",
+							image3: "assets/img/portfolio/portfolio-details-3.jpg",
+						},
+						category: "Web design 1",
+						client: "ASU Company 1",
+						project_date: "01 March, 2020",
+						project_URL: "www.example.com",
+						desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati facilis et voluptatibus voluptatum veritatis aspernatur dolor tenetur corrupti. Non, rem.",
+					},
+
+					web2: {
+						images: {
+							image1: "assets/img/portfolio/portfolio-details-3.jpg",
+							image2: "assets/img/portfolio/portfolio-details-3.jpg",
+							image3: "assets/img/portfolio/portfolio-details-3.jpg",
+						},
+						category: "Web design2",
+						client: "ASU Company 2",
+						project_date: "01 March, 2020",
+						project_URL: "www.example.com",
+						desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati facilis et voluptatibus voluptatum veritatis aspernatur dolor tenetur corrupti. Non, rem.",
+					},
+					web3: {
+						images: {
+							image1: "assets/img/portfolio/portfolio-details-3.jpg",
+							image2: "assets/img/portfolio/portfolio-details-3.jpg",
+							image3: "assets/img/portfolio/portfolio-details-3.jpg",
+						},
+						category: "Web design3",
+						client: "ASU Company",
+						project_date: "01 March, 2020",
+						project_URL: "www.example.com",
+						desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati facilis et voluptatibus voluptatum veritatis aspernatur dolor tenetur corrupti. Non, rem.",
+					},
+
+					app1: {
+						images: {
+							image1: "assets/img/portfolio/portfolio-details-2.jpg",
+							image2: "assets/img/portfolio/portfolio-details-3.jpg",
+							image3: "assets/img/portfolio/portfolio-details-2.jpg",
+						},
+						category: "App design 1",
+						client: "Code9ine Company",
+						project_date: "01 March, 2020",
+						project_URL: "www.example.com",
+						desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati facilis et voluptatibus voluptatum veritatis aspernatur dolor tenetur corrupti. Non, rem.",
+					},
+
+					app2: {
+						images: {
+							image1: "assets/img/portfolio/portfolio-details-2.jpg",
+							image2: "assets/img/portfolio/portfolio-details-3.jpg",
+							image3: "assets/img/portfolio/portfolio-details-2.jpg",
+						},
+						category: "App design 2",
+						client: "Code9ine Company",
+						project_date: "01 March, 2020",
+						project_URL: "www.example.com",
+						desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati facilis et voluptatibus voluptatum veritatis aspernatur dolor tenetur corrupti. Non, rem.",
+					},
+					app3: {
+						images: {
+							image1: "assets/img/portfolio/portfolio-details-2.jpg",
+							image2: "assets/img/portfolio/portfolio-details-3.jpg",
+							image3: "assets/img/portfolio/portfolio-details-2.jpg",
+						},
+						category: "App design 3",
+						client: "Code9ine Company",
+						project_date: "01 March, 2020",
+						project_URL: "www.example.com",
+						desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati facilis et voluptatibus voluptatum veritatis aspernatur dolor tenetur corrupti. Non, rem.",
+					},
+				};
+
+				window.localStorage.setItem("details", JSON.stringify(data[params]));
+				window.location.href = "portfolio-details.html";
+			}
+		</script>
 
 		<!-- Vendor JS Files -->
 		<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
