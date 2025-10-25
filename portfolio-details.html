@@ -1,157 +1,364 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-		<title>Portfolio Details - iPortfolio Bootstrap Template</title>
-		<meta content="" name="description" />
-		<meta content="" name="keywords" />
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-		<!-- Favicons -->
-		<link href="assets/img/favicon.png" rel="icon" />
-		<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+	<title>Portfolio Details</title>
+	<meta name="description" content="Project details and gallery" />
+	<meta name="keywords" content="portfolio, project, details" />
 
-		<!-- Google Fonts -->
-		<link
-			href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-			rel="stylesheet" />
+	<!-- Favicons -->
+	<link href="assets/img/favicon.png" rel="icon" />
+	<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-		<!-- Vendor CSS Files -->
-		<link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-		<link
-			href="assets/vendor/bootstrap/css/bootstrap.min.css"
-			rel="stylesheet" />
-		<link
-			href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-			rel="stylesheet" />
-		<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-		<link
-			href="assets/vendor/glightbox/css/glightbox.min.css"
-			rel="stylesheet" />
-		<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700|Poppins:300,400,500,600,700"
+		rel="stylesheet" />
 
-		<!-- Template Main CSS File -->
-		<link href="assets/css/style.css" rel="stylesheet" />
-		<script>
-			var details = JSON.parse(localStorage.getItem("details"));
+	<!-- Vendor CSS Files -->
+	<link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+	<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-			console.log(details.category);
-		</script>
-	</head>
+	<!-- Template Main CSS File -->
+	<link href="assets/css/style.css" rel="stylesheet" />
 
-	<body>
-		<main>
-			<!-- ======= Breadcrumbs ======= -->
-			<section id="breadcrumbs" class="breadcrumbs">
-				<div class="container">
-					<div class="d-flex justify-content-between align-items-center">
-						<h2>Portfoio Details</h2>
-						<ol>
-							<li><a href="index.html">Home</a></li>
-							<li>Portfoio Details</li>
-						</ol>
-					</div>
-				</div>
-			</section>
-			<!-- End Breadcrumbs -->
+	<!-- Page-specific quick polish -->
+	<style>
+		body {
+			font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+		}
 
-			<!-- ======= Portfolio Details Section ======= -->
-			<section id="portfolio-details" class="portfolio-details">
-				<div class="container">
-					<div class="row gy-4">
-						<div class="col-lg-8">
-							<div class="portfolio-details-slider swiper">
-								<div class="swiper-wrapper align-items-center">
-									<div class="swiper-slide" id="swiper1"></div>
+		.breadcrumbs {
+			background-color: #040b14;
+			/* dark background */
+			color: #fff;
+			/* white text */
+			padding: 32px 0;
+			margin-bottom: 0;
+		}
 
-									<div class="swiper-slide" id="swiper2"></div>
+		.breadcrumbs h2 {
+			color: #fff;
+			margin: 0;
+			font-weight: 700;
+			letter-spacing: 0.3px;
+		}
 
-									<div class="swiper-slide" id="swiper3"></div>
-								</div>
-								<div class="swiper-pagination"></div>
-							</div>
-						</div>
+		.breadcrumbs ol li,
+		.breadcrumbs ol li a {
+			color: #fff;
+		}
 
-						<div class="col-lg-4">
-							<div class="portfolio-info">
-								<h3>Project information</h3>
-								<ul>
-									<li id="category"></li>
-									<li id="client"></li>
-									<li id="project_data"></li>
-									<li id="project_url"></li>
-								</ul>
-							</div>
-							<div class="portfolio-description" id="description"></div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- End Portfolio Details Section -->
-		</main>
-		<!-- End #main -->
+		.breadcrumbs ol li a:hover {
+			color: #0dcaf0;
+			/* optional hover color accent */
+		}
 
-		<!-- ======= Footer ======= -->
-		<footer id="footer">
+
+		.portfolio-details {
+			padding-top: 32px;
+			padding-bottom: 64px;
+		}
+
+		.badge-soft {
+			background: rgba(14, 165, 233, .12);
+			color: #0369a1;
+			border: 1px solid rgba(14, 165, 233, .2);
+			font-weight: 600;
+		}
+
+		.info-list li {
+			padding: 8px 0;
+			border-bottom: 1px dashed #eaeaea;
+		}
+
+		.info-list li:last-child {
+			border-bottom: 0;
+		}
+
+		.portfolio-description h2 {
+			font-size: 1.25rem;
+			margin-bottom: 10px;
+		}
+
+		.btn-visit {
+			background: #0ea5e9;
+			color: #fff;
+			border: none;
+			padding: 10px 16px;
+			border-radius: 12px;
+		}
+
+		.btn-visit:hover {
+			background: #0284c7;
+			color: #fff;
+		}
+
+		.rounded-2xl {
+			border-radius: 1rem;
+		}
+
+		.shadow-soft {
+			box-shadow: 0 10px 30px rgba(2, 8, 20, .06), 0 2px 6px rgba(2, 8, 20, .06);
+		}
+
+		.swiper {
+			--swiper-navigation-size: 22px;
+		}
+
+		.thumbs .swiper-slide {
+			opacity: .55;
+			cursor: pointer;
+		}
+
+		.thumbs .swiper-slide-thumb-active {
+			opacity: 1;
+			border: 2px solid #0ea5e9;
+		}
+
+		.empty-state {
+			border: 1px dashed #ddd;
+			padding: 24px;
+			border-radius: 12px;
+			text-align: center;
+		}
+
+		@media (max-width: 991.98px) {
+			.portfolio-details {
+				padding-top: 24px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<!-- ======= Breadcrumbs / Header ======= -->
+		<section id="breadcrumbs" class="breadcrumbs">
 			<div class="container">
-				<div class="copyright"></div>
-				<div class="credits"></div>
+				<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+					<h2 class="mb-0">Portfolio Details</h2>
+					<ol class="breadcrumb mb-0">
+						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+						<li class="breadcrumb-item active">Portfolio Details</li>
+					</ol>
+				</div>
 			</div>
-		</footer>
-		<!-- End  Footer -->
+		</section>
 
-		<a
-			href="#"
-			class="back-to-top d-flex align-items-center justify-content-center"
-			><i class="bi bi-arrow-up-short"></i
-		></a>
+		<!-- ======= Portfolio Details Section ======= -->
+		<section id="portfolio-details" class="portfolio-details">
+			<div class="container">
+				<!-- Hero card -->
+				<div class="p-4 p-md-5 rounded-2xl shadow-soft mb-4"
+					style="background: linear-gradient(135deg, rgba(14,165,233,.08), rgba(139,92,246,.08));">
+					<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+						<div>
+							<span id="category-badge" class="badge badge-soft me-2"></span>
+							<span id="date-badge" class="badge bg-light text-dark border"></span>
+							<h1 id="project-title" class="h3 fw-bold mt-2 mb-1">Project</h1>
+							<div class="text-muted" id="client-line"></div>
+						</div>
+						<div>
+							<a id="visit-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-visit">
+								<i class="bi bi-box-arrow-up-right me-1"></i> Visit Project
+							</a>
+						</div>
+					</div>
+				</div>
 
-		<script>
-			document.getElementById(
-				"category",
-			).innerHTML = `<strong>Category</strong>: ${details.category}`;
+				<div class="row gy-4">
+					<!-- Gallery -->
+					<div class="col-lg-8">
+						<div class="portfolio-details-slider swiper rounded-2xl shadow-soft">
+							<div class="swiper-wrapper align-items-center" id="swiper-wrapper">
+								<!-- slides injected -->
+							</div>
+							<div class="swiper-pagination"></div>
 
-			document.getElementById(
-				"client",
-			).innerHTML = `<strong>Client</strong>:  ${details.client}`;
+						</div>
 
-			document.getElementById(
-				"project_data",
-			).innerHTML = `<strong>Project date</strong>: ${details.project_date}`;
+						<!-- Thumbs -->
+						<div class="swiper thumbs mt-3" id="thumbs-swiper">
+							<div class="swiper-wrapper" id="thumbs-wrapper">
+								<!-- thumbs injected -->
+							</div>
+						</div>
+					</div>
 
-			document.getElementById(
-				"description",
-			).innerHTML = `<h2>Description</h2> <p>${details.desc}</p>`;
+					<!-- Right info panel -->
+					<div class="col-lg-4">
+						<div class="portfolio-info rounded-2xl shadow-soft p-4 mb-4">
+							<h3 class="h5 fw-bold mb-3">Project information</h3>
+							<ul class="list-unstyled info-list">
+								<li><strong>Category</strong>: <span id="category"></span></li>
+								<li><strong>Client</strong>: <span id="client"></span></li>
+								<li><strong>Project date</strong>: <span id="project_date"></span></li>
+								<li><strong>Project URL</strong>: <a id="project_url" href="#" target="_blank"
+										rel="noopener noreferrer">Open link</a></li>
+							</ul>
+						</div>
 
-			document.getElementById(
-				"project_url",
-			).innerHTML = `<strong>Project URL</strong>:
-										<a href="#">${details.project_URL}</a> `;
+						<div class="portfolio-description rounded-2xl shadow-soft p-4">
+							<h2 class="h5 fw-bold">Description</h2>
+							<p id="description" class="mb-0"></p>
+						</div>
+					</div>
+				</div>
 
-			document.getElementById("swiper1").innerHTML = `<img
-											src="${details.images.image1}"
-											alt="" />`;
-			document.getElementById("swiper2").innerHTML = `<img
-											src="${details.images.image2}"
-											alt="" />`;
-			document.getElementById("swiper3").innerHTML = `<img
-											src="${details.images.image3}"
-											alt="" />`;
-		</script>
+				<!-- Fallback when no details are found -->
+				<div id="empty-state" class="empty-state mt-4 d-none">
+					<i class="bi bi-info-circle me-2"></i>
+					We couldn’t find project details. Please go back to the
+					<a href="index.html">portfolio</a> and open a project again.
+				</div>
+			</div>
+		</section>
+		<!-- End Portfolio Details Section -->
+	</main>
 
-		<!-- Vendor JS Files -->
-		<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-		<script src="assets/vendor/aos/aos.js"></script>
-		<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-		<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-		<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-		<script src="assets/vendor/typed.js/typed.min.js"></script>
-		<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-		<script src="assets/vendor/php-email-form/validate.js"></script>
+	<!-- ======= Footer ======= -->
+	<footer id="footer">
+		<div class="container py-4 text-center text-muted small">
+			<div class="copyright">© <span id="year"></span> — Sayed Nasim Alizai</div>
+		</div>
+	</footer>
 
-		<!-- Template Main JS File -->
-		<script src="assets/js/main.js"></script>
-	</body>
+	<a href="https://wa.me/+93791638121" class="whatsapp-button" target="_blank">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+	</a>
+
+
+	<!-- Vendor JS Files -->
+	<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+	<script src="assets/vendor/aos/aos.js"></script>
+	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="assets/vendor/typed.js/typed.min.js"></script>
+	<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+	<script src="assets/vendor/php-email-form/validate.js"></script>
+
+	<!-- Template Main JS File -->
+	<script src="assets/js/main.js"></script>
+
+	<!-- Page script -->
+	<script>
+		// Helper: safely read details
+		function getDetails() {
+			try {
+				return JSON.parse(localStorage.getItem("details") || "{}");
+			} catch (e) {
+				return {};
+			}
+		}
+
+		const details = getDetails();
+		const hasDetails = details && (details.category || details.desc || (details.images && Object.values(details.images || {}).length));
+
+		// Elements
+		const categoryBadge = document.getElementById("category-badge");
+		const dateBadge = document.getElementById("date-badge");
+		const titleEl = document.getElementById("project-title");
+		const clientLine = document.getElementById("client-line");
+		const visitBtn = document.getElementById("visit-btn");
+
+		const catEl = document.getElementById("category");
+		const clientEl = document.getElementById("client");
+		const dateEl = document.getElementById("project_date");
+		const urlEl = document.getElementById("project_url");
+		const descEl = document.getElementById("description");
+
+		const emptyState = document.getElementById("empty-state");
+		const yearEl = document.getElementById("year");
+
+		// Year in footer
+		yearEl.textContent = new Date().getFullYear();
+
+		if (!hasDetails) {
+			emptyState.classList.remove("d-none");
+		}
+
+		// Fill top hero & right panel
+		const category = details.category || "Project";
+		const client = details.client || "—";
+		const pDate = details.project_date || "—";
+		const url = details.project_URL || "#";
+		const desc = details.desc || "No description available.";
+
+		categoryBadge.textContent = category;
+		dateBadge.textContent = pDate;
+		titleEl.textContent = details.title || category;
+		clientLine.textContent = client;
+
+		catEl.textContent = category;
+		clientEl.textContent = client;
+		dateEl.textContent = pDate;
+
+		urlEl.href = url;
+		urlEl.textContent = url === "#" ? "—" : (new URL(url, window.location.href)).href;
+		visitBtn.href = url;
+		descEl.textContent = desc;
+
+		// Build gallery slides
+		const imgValues = Object.values(details.images || {}).filter(Boolean);
+		const images = imgValues.length ? imgValues : ["assets/img/placeholder.png"]; // fallback
+
+		const wrapper = document.getElementById("swiper-wrapper");
+		const thumbsWrapper = document.getElementById("thumbs-wrapper");
+
+		wrapper.innerHTML = images
+			.map((src, i) => `
+          <div class="swiper-slide">
+            <a href="${src}" class="glightbox" data-gallery="projectGallery" data-glightbox="title: ${category}">
+              <img src="${src}" alt="Project image ${i + 1}" class="img-fluid w-100">
+            </a>
+          </div>
+        `).join("");
+
+		thumbsWrapper.innerHTML = images
+			.map((src, i) => `
+          <div class="swiper-slide" style="width:100px;">
+            <img src="${src}" alt="Thumb ${i + 1}" class="img-fluid rounded">
+          </div>
+        `).join("");
+
+		// Init Lightbox
+		const lightbox = GLightbox({ selector: ".glightbox" });
+
+		// Init Swipers (main + thumbs)
+		const thumbsSwiper = new Swiper("#thumbs-swiper", {
+			slidesPerView: Math.min(images.length, 6),
+			spaceBetween: 10,
+			freeMode: true,
+			watchSlidesProgress: true,
+			breakpoints: {
+				0: { slidesPerView: Math.min(images.length, 4) },
+				768: { slidesPerView: Math.min(images.length, 6) }
+			}
+		});
+
+		const mainSwiper = new Swiper(".portfolio-details-slider", {
+			speed: 500,
+			loop: images.length > 3 ? true : false, // loop only if more than 3 slides
+			autoplay: images.length > 1 ? { delay: 3500, disableOnInteraction: false } : false,
+			pagination: { el: ".swiper-pagination", clickable: true },
+			navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+			thumbs: { swiper: thumbsSwiper }
+		});
+
+
+		// Refresh AOS after images load
+		if (window.AOS) AOS.refresh();
+	</script>
+</body>
+
 </html>

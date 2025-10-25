@@ -25,6 +25,32 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.whatsapp-button {
+  position: fixed;
+  bottom: 70px;
+  right: 8px;
+  background-color: #25d366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: transform 0.2s;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-button img {
+  width: 35px;
+  height: 35px;
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -219,10 +245,21 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100%;
+  width: calc(100% - 300px);
   height: 100vh;
-  background: url("../img/hero-bg.JPG") top center;
+  background: url("../img/hero-bg.jpeg") top center no-repeat;
   background-size: cover;
+  margin-left: 300px;
+  /* optional: align beside sidebar */
+}
+
+/* When the viewport width is 1200px or smaller */
+@media (max-width: 1200px) {
+  #hero {
+    width: 100%;
+    margin-left: 0;
+    /* remove sidebar gap on smaller screens */
+  }
 }
 
 #hero:before {
